@@ -8,7 +8,250 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
+@import "mixins";
+
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+// General
+
+body {
+  padding-top: 3.5em;
+}
+
+a {
+  @include hover-focus {
+    @include transition(color .15s ease-in-out, background-color .15s ease-in-out);
+  }
+}
+
+.border-lg {
+  border: 0.35em solid $dark;
+}
+
+
+// Navigation
+
+.navbar-light {
+  //box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+
+  .navbar-nav {
+    .nav-link {
+      @include hover-focus {
+        color: $white;
+        background-color: theme-color("primary");
+      }
+    }
+  }
+
+  .navbar-toggler {
+    color: $white;
+    background-color: theme-color("primary-light");
+    border-radius: 0.25rem;
+
+    @include hover-focus {
+      background-color: theme-color("primary");
+    }
+  }
+}
+
+.navbar-full-height {
+  align-self: stretch;
+
+  .navbar-nav-full-height {
+    align-self: stretch;
+
+    .nav-item {
+      display: flex;
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+
+// Buttons
+
+.btn-primary {
+  border-color: transparent;
+  @include hover-focus-active-active {
+    border-color: transparent;
+    background-color: theme-color('secondary');
+  }
+}
+
+.btn-secondary, .btn-yellow, .btn-gray-light {
+  border-color: transparent;
+  @include hover-focus-active-active {
+    border-color: transparent;
+    background-color: theme-color('primary');
+    color: $white;
+  }
+}
+
+// Dropdowns
+
+.dropdown {
+  flex-direction: column;
+
+  .dropdown-toggle::after {
+    content: inherit;
+  }
+
+  .dropdown-menu {
+    border-radius: 0 0 1rem 1rem;
+    overflow-x: hidden;
+    color: inherit;
+    text-align: inherit;
+    margin-top: 0;
+    border-color: theme-color('primary');
+    border-width: 1px 0 0 0;
+
+    .dropdown-item {
+      color: inherit;
+
+      @include hover-focus {
+        background-color: theme-color('primary');
+        color: $white;
+      }
+    }
+  }
+}
+
+
+
+// Landing
+
+#landing-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                    url("../img/landing/bg.png");
+  background-size: cover;
+  background-position: center;
+
+  .btn-lg {
+    font-size: 1.4rem;
+    padding: 0.6rem 3rem;
+  }
+}
+
+.next-icon {
+  min-height: 50px;
+  max-height: 210px;
+  background: url("../img/landing/top.svg") no-repeat center;
+
+  @include media-breakpoint-up(lg) {
+    background-image: url("../img/landing/next.svg");
+  }
+}
+
+#landing-carousel {
+  .carousel-item  img {
+    height: 300px;
+    width: 300px;
+  }
+
+  .carousel-indicators {
+    bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+    li {
+      background: transparent no-repeat center;
+      text-indent: 0;
+      width: 40px;
+      height: 40px;
+
+      &::before, &::after {
+        content: none;
+      }
+
+      &:nth-child(1) {
+        background-image: url("../img/landing/ico_1.svg");
+        @include hover-focus-active-active {
+          background-image: url("../img/landing/ico_1_active.svg");
+        }
+      }
+      &:nth-child(2) {
+        background-image: url("../img/landing/ico_2.svg");
+        @include hover-focus-active-active {
+          background-image: url("../img/landing/ico_2_active.svg");
+        }
+      }
+      &:nth-child(3) {
+        background-image: url("../img/landing/ico_3.svg");
+        @include hover-focus-active-active {
+          background-image: url("../img/landing/ico_3_active.svg");
+        }
+      }
+      &:nth-child(4) {
+        background-image: url("../img/landing/ico_4.svg");
+        @include hover-focus-active-active {
+          background-image: url("../img/landing/ico_4_active.svg");
+        }
+      }
+      &:nth-child(5) {
+        background-image: url("../img/landing/ico_5.svg");
+        @include hover-focus-active-active {
+          background-image: url("../img/landing/ico_5_active.svg");
+        }
+      }
+      &:nth-child(6) {
+        background-image: url("../img/landing/ico_6.svg");
+        @include hover-focus-active-active {
+          background-image: url("../img/landing/ico_6_active.svg");
+        }
+      }
+    }
+  }
+}
+
+#block5 {
+  .row button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+}
+
+#block6 {
+  .circle-row {
+    .circle-connection {
+      align-self: center;
+
+      &::before {
+        padding-top: 10%;
+        float: left;
+        content: '';
+      }
+    }
+
+    .circle {
+      border-radius: 50%;
+      padding: 0;
+      color: theme-color("gray");
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include hover-focus-active-active {
+        color: $white;
+      }
+
+      &::before {
+        padding-top: 100%;
+        float: left;
+        content: '';
+      }
+    }
+  }
 }

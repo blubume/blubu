@@ -1,20 +1,95 @@
+// Make Bootstrap variables usable
+@import '~bootstrap/scss/functions';
 
-// Body
-$body-bg: #f8fafc;
+// Laravel defaults
 
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+//$font-family-sans-serif: "Nunito", sans-serif;
+//$font-size-base: 0.9rem;
+//$line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+//$blue: #3490dc;
+//$indigo: #6574cd;
+//$purple: #9561e2;
+//$pink: #f66D9b;
+//$red: #e3342f;
+//$orange: #f6993f;
+//$yellow: #ffed4a;
+//$green: #38c172;
+//$teal: #4dc0b5;
+//$cyan: #6cb2eb;
+
+
+// General
+
+$white:    #fff !default;
+$gray-100: #f9f9f9;
+$gray-200: #ececec;
+$gray-300: #e2e2e2;
+$gray-400: #d4d4d4;
+$gray-500: #b5b5b5;
+$gray-550: #949494;
+$gray-600: #757575;
+$gray-700: #505050;
+$gray-800: #3a3a3a;
+$gray-900: #252525;
+$black:    #000 !default;
+
+$theme-colors: (
+  "primary": #4ABDAC,
+  "secondary": #FC4A1A,
+  "yellow": #F7B733,
+  "primary-light": #41D5BF,
+  "gray": $gray-550,
+  "gray-light": $gray-200
+);
+
+
+$spacer: 1rem !default;
+
+$spacers: (
+  5: ($spacer * 2),
+  6: ($spacer * 3),
+  7: ($spacer * 4),
+  8: ($spacer * 6),
+  9: ($spacer * 8),
+);
+
+$yiq-contrasted-threshold:  190;
+
+$display1-size: 4rem;
+$display2-size: 3.5rem;
+$display3-size: 3rem;
+$display4-size: 2.5rem;
+
+$border-radius:    3rem;
+$border-radius-lg: 3rem;
+$border-radius-sm: 3rem;
+
+
+// Body
+
+$body-bg: $white;
+
+
+// Navbar
+
+$navbar-light-color:                theme-color("primary");
+$navbar-light-hover-color:          theme-color("secondary");
+$navbar-light-active-color:         theme-color("secondary");
+//$navbar-light-disabled-color:       rgba($black, .3) !default;
+$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$white}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 6h22M4 13h22M4 20h22'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-light-toggler-border-color: theme-color("primary");
+$navbar-toggler-padding-y:          .05rem;
+$navbar-toggler-padding-x:          .40rem;
+
+
+// Buttons
+
+//$input-btn-focus-width:       0;
+//$btn-focus-width:             0;
+
+//$btn-padding-y-lg:            0.55rem;
+$btn-padding-x-lg:            2rem;
+
